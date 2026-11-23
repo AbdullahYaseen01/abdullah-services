@@ -12,7 +12,7 @@ export function About() {
               I work across AI and full-stack engineering: real software products, SaaS, agents, automation, and the frontend, backend, APIs, and databases that hold them together. The aim is a system a business can run, with a clear handover rather than a demo that only works on my machine.
             </p>
             <p>
-              RaahBan is my own education product for Pakistani students. I also work on SaaS platforms, computer-vision systems, and websites for other teams. I take international projects, including clients in the UK, the USA, and Europe.
+              RaahBan is an education product for Pakistani students. I also work on SaaS platforms, computer-vision systems, and websites for other teams. I take international projects, including clients in the UK, the USA, and Europe.
             </p>
           </div>
         </div>

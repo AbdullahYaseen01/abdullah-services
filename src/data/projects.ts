@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     name: 'RaahBan',
     kicker: 'Owned product · Education',
     summary:
-      'My own AI-powered education guidance platform for Pakistani students planning university admissions.',
+      'An AI-powered education guidance platform for Pakistani students planning university admissions.',
     problem:
       'Students comparing universities, merit, scholarships, and test deadlines often have to piece that together from scattered advice.',
     does:

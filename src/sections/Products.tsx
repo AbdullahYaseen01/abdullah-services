@@ -11,7 +11,7 @@ export function Products() {
           <p className="kicker">SaaS products</p>
           <h2 className="display mt-3 text-4xl leading-tight sm:text-5xl">Three products, three different relationships.</h2>
           <p className="mt-4 text-lg leading-relaxed text-[#d7e4d4]">
-            RaahBan is mine. Clipzy and Autozy are shown as product work, with only the role I can actually support.
+            RaahBan is an education product. Clipzy and Autozy are shown as product work, with only the role I can actually support.
           </p>
         </div>
         <div className="mt-8 grid gap-5 lg:grid-cols-3">

@@ -1,33 +1,38 @@
 export type Testimonial = {
   id: string
-  /** Design placeholder. Not a real client, review, or permission. */
+  /** Layout placeholder. Not a real client, review, or permission. */
   sample: true
   quote: string
-  /** Role label only. Not a genuine person or company. */
-  attribution: string
+  /** Role only. Not a real person. */
+  role: string
+  /** Short context only. Not a real company. */
+  context: string
 }
 
 /**
- * SAMPLE TESTIMONIALS — design placeholders only.
- * Do not treat these quotes, labels, or companies as real clients.
+ * ILLUSTRATIVE REVIEWS — design placeholders only.
+ * Do not treat these quotes, roles, or contexts as real clients.
  */
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 'sample-operations',
     sample: true,
-    quote: 'The first release covered the workflow we actually use, and the handover made it clear how to run it.',
-    attribution: 'Sample · Operations',
+    quote: 'The first release covered the workflow we actually use. The handover was clear, and the team could run it without a walkthrough on every screen.',
+    role: 'Operations lead',
+    context: 'Internal tools',
   },
   {
     id: 'sample-product',
     sample: true,
-    quote: 'We could review the product in working pieces instead of waiting for one large reveal at the end.',
-    attribution: 'Sample · Product',
+    quote: 'We reviewed the product in working pieces instead of waiting for one large reveal. Decisions were easier because we could click through the real flow.',
+    role: 'Product manager',
+    context: 'SaaS build',
   },
   {
     id: 'sample-customer-team',
     sample: true,
-    quote: 'The conversation flow and the internal record stayed connected, which is what the team needed day to day.',
-    attribution: 'Sample · Customer team',
+    quote: 'The conversation flow and the customer record stayed connected. That is what the team needed for day-to-day follow-up.',
+    role: 'Customer team lead',
+    context: 'Support workflow',
   },
 ]
