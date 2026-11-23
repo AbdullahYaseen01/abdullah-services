@@ -1,7 +1,5 @@
-import { CERTIFICATES } from '../data/certificates'
 import { EXPERIENCE } from '../data/experience'
 import { STACK } from '../data/pricing'
-import { PROFILE } from '../data/profile'
 
 export function About() {
   return (
@@ -18,11 +16,6 @@ export function About() {
               RaahBan is my own education product for Pakistani students. I also work on SaaS platforms, computer-vision systems, and websites for other teams. I take international projects, including clients in the UK, the USA, and Europe.
             </p>
           </div>
-          <p className="mt-6">
-            <a className="btn btn-secondary" href={PROFILE.resume}>
-              Resume PDF
-            </a>
-          </p>
         </div>
         <div className="rounded-[1.6rem] bg-night p-6 text-cream sm:p-8">
           <h3 className="text-sm font-semibold tracking-[0.14em] text-lime uppercase">Technologies in published work</h3>
@@ -47,7 +40,6 @@ export function About() {
             <li key={entry.id} className="grid gap-1 rounded-[1.3rem] border border-line bg-paper-2 px-5 py-4 md:grid-cols-[14rem_1fr] md:gap-8">
               <p className="text-sm font-semibold text-muted">
                 {entry.startDate} – {entry.endDate ?? 'Present'}
-                <span className="mt-1 block text-ink">{entry.location}</span>
               </p>
               <div>
                 <p className="font-semibold">
@@ -61,28 +53,6 @@ export function About() {
         </ol>
       </div>
 
-      <div className="mt-12">
-        <h3 className="display text-3xl">Certificates on file</h3>
-        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-          {CERTIFICATES.map((certificate) => (
-            <li key={certificate.id} className="rounded-2xl border border-line bg-paper-2 p-4">
-              <p className="font-semibold leading-snug">{certificate.title}</p>
-              <p className="mt-1 text-sm text-muted">
-                {certificate.issuer} · {certificate.date}
-              </p>
-              {certificate.verifyUrl ? (
-                <a className="mt-2 inline-block text-sm font-semibold" href={certificate.verifyUrl}>
-                  Verification link
-                </a>
-              ) : (
-                <a className="mt-2 inline-block text-sm font-semibold" href={certificate.image}>
-                  Certificate image
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
     </section>
   )
 }

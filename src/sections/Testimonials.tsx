@@ -5,32 +5,27 @@ export function Testimonials() {
   const { goToContact } = useInquiry()
 
   return (
-    <section id="testimonials" className="bg-paper py-14 md:py-20">
-      <div className="wrap max-w-3xl rounded-[1.6rem] border border-[#164f35]/25 bg-sand px-6 py-8 sm:px-8">
-        <p className="kicker">Testimonials</p>
-        <h2 className="display mt-3 text-4xl">Client words, only when they are real.</h2>
-        {TESTIMONIALS.length === 0 ? (
-          <div className="mt-5">
-            <p className="text-lg leading-relaxed text-muted">
-              No testimonials are published. I will add a quote only when I can name the person and they have agreed to be quoted. Nothing on this page is a stand-in review.
-            </p>
-            <button type="button" className="btn btn-secondary mt-5" onClick={() => goToContact()}>
-              Discuss Your Project
-            </button>
-          </div>
-        ) : (
-          <ul className="mt-6 grid gap-4">
-            {TESTIMONIALS.map((item) => (
-              <li key={item.name} className="rounded-2xl border border-line bg-paper-2 p-5">
-                <blockquote className="text-lg leading-relaxed">“{item.quote}”</blockquote>
-                <p className="mt-3 text-sm font-semibold">
-                  {item.name}, {item.role}
-                  {item.company ? `, ${item.company}` : ''}
-                </p>
-              </li>
-            ))}
-          </ul>
-        )}
+    <section id="testimonials" className="bg-paper py-16 md:py-24">
+      <div className="wrap">
+        <div className="max-w-2xl">
+          <p className="kicker">Testimonials</p>
+          <h2 className="display mt-3 text-4xl leading-tight sm:text-5xl">Sample words for the layout.</h2>
+          <p className="prose-muted mt-4">
+            These cards are design samples. They are not client reviews, and the labels are not real people or companies.
+          </p>
+        </div>
+        <ul className="mt-8 grid gap-4 lg:grid-cols-3">
+          {TESTIMONIALS.map((item) => (
+            <li key={item.id} className="flex h-full flex-col rounded-[1.4rem] border border-[#164f35]/20 bg-sand p-5">
+              <p className="w-fit rounded-full bg-lime px-3 py-1 text-xs font-extrabold tracking-wide text-ink uppercase">Sample</p>
+              <blockquote className="mt-4 text-lg leading-relaxed">“{item.quote}”</blockquote>
+              <p className="mt-4 text-sm font-semibold text-muted">{item.attribution}</p>
+            </li>
+          ))}
+        </ul>
+        <button type="button" className="btn btn-secondary mt-6" onClick={() => goToContact()}>
+          Discuss Your Project
+        </button>
       </div>
     </section>
   )

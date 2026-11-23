@@ -1,24 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#070708"/>
-      <stop offset="50%" style="stop-color:#0f0a1a"/>
-      <stop offset="100%" style="stop-color:#070708"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#7C3AED"/>
-      <stop offset="50%" style="stop-color:#4F46E5"/>
-      <stop offset="100%" style="stop-color:#22D3EE"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="70%" cy="30%" r="50%">
-      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:0.4"/>
-      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:0"/>
-    </radialGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect width="1200" height="630" fill="url(#glow)"/>
-  <text x="80" y="280" font-family="system-ui, sans-serif" font-size="72" font-weight="900" fill="url(#accent)">ABDULLAH YASEEN</text>
-  <text x="80" y="360" font-family="system-ui, sans-serif" font-size="32" fill="#F4F2FA" opacity="0.9">Full-Stack Developer &amp; AI Engineer</text>
-  <text x="80" y="420" font-family="system-ui, sans-serif" font-size="24" fill="#A8A3B8">I build interfaces that convert  and AI that sees.</text>
-  <rect x="80" y="480" width="200" height="4" fill="url(#accent)" rx="2"/>
+  <rect width="1200" height="630" fill="#081f14"/>
+  <rect x="0" y="0" width="1200" height="12" fill="#d9f582"/>
+  <text x="80" y="180" fill="#d9f582" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="3">AI / SOFTWARE</text>
+  <text x="80" y="300" fill="#f5f2e8" font-family="Segoe UI, Arial, sans-serif" font-size="68" font-weight="800">Smarter software.</text>
+  <text x="80" y="390" fill="#d9f582" font-family="Segoe UI, Arial, sans-serif" font-size="68" font-weight="800">Real business possibilities.</text>
+  <text x="80" y="490" fill="#d7e4d4" font-family="Segoe UI, Arial, sans-serif" font-size="28">Even Better Services</text>
 </svg>

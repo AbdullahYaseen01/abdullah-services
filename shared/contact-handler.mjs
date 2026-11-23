@@ -71,7 +71,7 @@ export async function handleContact({ method, payload, env, fetchImpl = fetch, n
       body: {
         ok: false,
         code: 'delivery_failed',
-        error: 'The inquiry could not be delivered. Please email directly.',
+        error: 'The inquiry could not be delivered. Please try again.',
       },
     }
   }
@@ -82,7 +82,7 @@ export async function handleContact({ method, payload, env, fetchImpl = fetch, n
       body: {
         ok: false,
         code: 'delivery_failed',
-        error: 'The mail service did not accept the inquiry. Please email directly.',
+        error: 'The mail service did not accept the inquiry. Please try again.',
       },
     }
   }

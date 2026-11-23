@@ -1,4 +1,4 @@
-import { NAV, PROFILE, SOCIALS } from '../data/profile'
+import { NAV } from '../data/profile'
 import { useSectionScroll } from '../context/useInquiry'
 
 export function SiteFooter() {
@@ -29,24 +29,8 @@ export function SiteFooter() {
             </a>
           ))}
         </nav>
-        <div className="text-sm leading-7">
-          <a className="block text-cream" href={`mailto:${PROFILE.email}`}>
-            {PROFILE.email}
-          </a>
-          <a className="block" href={SOCIALS.whatsapp}>
-            WhatsApp
-          </a>
-          <a className="block" href={SOCIALS.linkedin}>
-            LinkedIn
-          </a>
-          <a className="block" href={SOCIALS.github}>
-            GitHub
-          </a>
-        </div>
       </div>
-      <div className="wrap border-t border-white/10 py-4 text-sm text-[#d7e4d4]">
-        © {new Date().getFullYear()} {PROFILE.name}
-      </div>
+      <div className="wrap border-t border-white/10 py-4 text-sm text-[#d7e4d4]">© {new Date().getFullYear()} Even Better Services</div>
     </footer>
   )
 }

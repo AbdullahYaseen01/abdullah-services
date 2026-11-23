@@ -110,11 +110,10 @@ export const PROJECTS: Project[] = [
     problem: 'The project needed a public home for shows, sessions, artist features, and a way for people to get involved.',
     does:
       'The site introduces Same Streets Presents, lists live shows and sessions, and includes pages for artist features, contact, and getting involved. It is a music site, not an online shop.',
-    role: 'Website implementation. The public repository is under my GitHub account.',
+    role: 'Website implementation.',
     stack: ['HTML', 'CSS', 'JavaScript'],
     url: 'https://www.samestreetspresents.com',
     urlLabel: 'samestreetspresents.com',
-    github: 'https://github.com/AbdullahYaseen01/same-streets-presents',
     image: '/projects/same-streets.webp',
     imageAlt: 'Same Streets Presents homepage for live music in Cleveland, Tennessee.',
     width: 1440,
@@ -143,9 +142,8 @@ export const PROJECTS: Project[] = [
     problem: 'A single detection per frame loses track of who is who when people overlap or briefly leave the frame.',
     does:
       'The public repository describes YOLOv8 for detection and DeepSORT for tracking, so several people can be followed in the same video while IDs stay consistent through overlap.',
-    role: 'Personal computer-vision project, published on GitHub.',
+    role: 'Computer-vision project.',
     stack: ['Python', 'YOLOv8', 'DeepSORT'],
-    github: 'https://github.com/AbdullahYaseen01/-Multi-Person-Tracking',
     stackNote: 'No public results image is shown. Frame rate and identity-switch figures are not published.',
     group: 'vision',
   },

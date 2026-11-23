@@ -62,8 +62,8 @@ test('reports success only after the mail service accepts the message', async ()
     payload: valid,
     env: {
       RESEND_API_KEY: 'test-key',
-      CONTACT_TO_EMAIL: 'abdullahyaseen6500@gmail.com',
-      CONTACT_FROM_EMAIL: 'portfolio@abdullahyaseen.dev',
+      CONTACT_TO_EMAIL: 'inbox@example.com',
+      CONTACT_FROM_EMAIL: 'studio@example.com',
     },
     now: 5_000,
     fetchImpl: async (url, init) => {
@@ -85,8 +85,8 @@ test('keeps a failure when the mail service rejects the message', async () => {
     payload: valid,
     env: {
       RESEND_API_KEY: 'test-key',
-      CONTACT_TO_EMAIL: 'abdullahyaseen6500@gmail.com',
-      CONTACT_FROM_EMAIL: 'portfolio@abdullahyaseen.dev',
+      CONTACT_TO_EMAIL: 'inbox@example.com',
+      CONTACT_FROM_EMAIL: 'studio@example.com',
     },
     now: 5_000,
     fetchImpl: async () => ({ ok: false }),
@@ -103,8 +103,8 @@ test('returns field errors and does not call the mail service', async () => {
     payload: { ...valid, email: 'bad' },
     env: {
       RESEND_API_KEY: 'test-key',
-      CONTACT_TO_EMAIL: 'abdullahyaseen6500@gmail.com',
-      CONTACT_FROM_EMAIL: 'portfolio@abdullahyaseen.dev',
+      CONTACT_TO_EMAIL: 'inbox@example.com',
+      CONTACT_FROM_EMAIL: 'studio@example.com',
     },
     now: 5_000,
     fetchImpl: async () => {

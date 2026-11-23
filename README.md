@@ -1,6 +1,6 @@
-# Abdullah Yaseen — Portfolio
+# Even Better Services
 
-Portfolio for Abdullah Yaseen, an AI and full-stack engineer. Vite, React, TypeScript, and Tailwind CSS.
+Independent software site for AI, automation, and products. Vite, React, TypeScript, and Tailwind CSS.
 
 ## Run locally
 
@@ -21,11 +21,11 @@ npm run build
 
 The form posts to `/api/contact`. In local development, Vite serves that route. On Vercel, `api/contact.ts` handles it.
 
-Delivery uses [Resend](https://resend.com). The form stays unavailable, and email plus WhatsApp remain the contact paths, until these server variables are set:
+Delivery uses [Resend](https://resend.com). The form stays unavailable until these server variables are set:
 
 ```bash
 RESEND_API_KEY=
-CONTACT_TO_EMAIL=abdullahyaseen6500@gmail.com
+CONTACT_TO_EMAIL=
 CONTACT_FROM_EMAIL=
 ```
 
@@ -37,14 +37,13 @@ A successful message is shown only after Resend accepts the email.
 
 | File | Edit |
 | --- | --- |
-| `src/data/profile.ts` | Name, email, and profile links |
+| `src/data/profile.ts` | Site URL and navigation |
 | `src/data/projects.ts` | Projects |
 | `src/data/services.ts` | Service categories |
 | `src/data/solutions.ts` | Business solutions |
 | `src/data/pricing.ts` | Prices, process, and technology groups |
-| `src/data/testimonials.ts` | Real testimonials only |
+| `src/data/testimonials.ts` | Sample testimonials for layout only |
 | `src/data/experience.ts` | Experience already on record |
-| `src/data/certificates.ts` | Certificates already on record |
 
 ## Deploy
 

@@ -1,8 +1,6 @@
 import { useEffect, useId, useState, type FormEvent } from 'react'
 import { BUDGET_OPTIONS, SERVICE_OPTIONS, validateInquiry } from '../../shared/inquiry.mjs'
 import { useInquiry } from '../context/useInquiry'
-import { PROFILE, SOCIALS } from '../data/profile'
-
 type FormState = {
   name: string
   email: string
@@ -100,10 +98,10 @@ export function InquiryForm() {
       }
       setStatus('error')
       setErrors(body.errors ?? {})
-      setMessage(body.error || 'The inquiry was not accepted. Please email me directly.')
+      setMessage(body.error || 'The inquiry was not accepted. Please try again.')
     } catch {
       setStatus('error')
-      setMessage('The inquiry could not be sent. Your details are still in the form. Please email me directly.')
+      setMessage('The inquiry could not be sent. Your details are still in the form. Please try again.')
     }
   }
 
@@ -113,30 +111,8 @@ export function InquiryForm() {
         <p className="kicker">Contact</p>
         <h2 className="display mt-3 text-4xl leading-tight text-cream sm:text-5xl">Let's build something that works.</h2>
         <p className="mt-4 text-lg leading-relaxed text-[#d7e4d4]">
-          I work with international clients. Email and WhatsApp are the direct routes. The form sends only when mail delivery is configured.
+          Share the system you want built. The form sends only when mail delivery is configured.
         </p>
-        <ul className="mt-6 grid gap-3 text-[1.02rem]">
-          <li>
-            <a className="text-cream underline decoration-white/30 underline-offset-4" href={`mailto:${PROFILE.email}`}>
-              {PROFILE.email}
-            </a>
-          </li>
-          <li>
-            <a className="text-cream underline decoration-white/30 underline-offset-4" href={SOCIALS.whatsapp}>
-              WhatsApp {SOCIALS.whatsappDisplay}
-            </a>
-          </li>
-          <li>
-            <a className="text-cream underline decoration-white/30 underline-offset-4" href={SOCIALS.linkedin}>
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a className="text-cream underline decoration-white/30 underline-offset-4" href={SOCIALS.github}>
-              GitHub
-            </a>
-          </li>
-        </ul>
       </div>
 
       <div className="rounded-3xl bg-paper-2 p-5 text-ink sm:p-7">
@@ -144,18 +120,10 @@ export function InquiryForm() {
 
         {delivery === 'unavailable' && (
           <div>
-            <h3 className="display text-3xl">Email me directly.</h3>
+            <h3 className="display text-3xl">The form is not sending yet.</h3>
             <p className="mt-3 leading-relaxed text-muted">
-              The inquiry form is implemented, and live delivery is not configured in this environment. Use email or WhatsApp and mention the service you need. Nothing here is recorded as a successful submission.
+              The inquiry form is implemented, and live delivery is not configured in this environment. Nothing here is recorded as a successful submission.
             </p>
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <a className="btn btn-primary" href={`mailto:${PROFILE.email}`}>
-                Email {PROFILE.name.split(' ')[0]}
-              </a>
-              <a className="btn btn-secondary" href={SOCIALS.whatsapp}>
-                WhatsApp
-              </a>
-            </div>
           </div>
         )}
 

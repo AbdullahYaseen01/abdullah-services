@@ -29,7 +29,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     startDate: 'May 2026',
     endDate: null,
     duration: 'Present',
-    location: 'Lahore, Punjab, Pakistan',
+    location: '',
     description:
       'Founder of Raahban (raahban.com), an education-guidance platform helping FSc and pre-university students in Pakistan navigate degree choices, scholarships, exam prep, and international study opportunities.',
     skills: ['Product Strategy', 'Full-Stack Development', 'React', 'Node.js'],
@@ -87,7 +87,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     startDate: 'Jan 2025',
     endDate: 'Oct 2025',
     duration: '10 mos',
-    location: 'Lahore, Punjab, Pakistan · Remote',
+    location: 'Remote',
     description:
       'Built responsive, interactive websites with HTML, CSS, JavaScript, and React — focused on performance, accessibility, animations, and clean component architecture.',
     skills: ['Front-End Development', 'React', 'JavaScript', 'CSS Animations', 'Responsive Design'],
