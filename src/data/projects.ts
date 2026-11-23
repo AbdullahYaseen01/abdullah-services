@@ -15,7 +15,7 @@ export type Project = {
   imageAlt?: string
   width?: number
   height?: number
-  group: 'featured' | 'previous' | 'vision'
+  group: 'featured' | 'previous' | 'vision' | 'mobile'
 }
 
 export const PROJECTS: Project[] = [
@@ -154,6 +154,40 @@ export const PROJECTS: Project[] = [
     width: 1280,
     height: 720,
     group: 'vision',
+  },
+  {
+    slug: 'android-booking',
+    name: 'Booking',
+    kicker: 'Android app',
+    summary: 'An Android app for the day’s appointments, job length, and a new booking.',
+    problem: 'A service day is easier to run when the next appointment, its length, and its status are on the phone.',
+    does:
+      'The screen lists the day with a time, a duration, and a confirmed state, and it includes a button to start another booking. This is a designed Android interface for the mobile work offered here. No Play Store listing is published.',
+    role: 'Designed Android interface.',
+    stack: ['Android'],
+    stackNote: 'The picture is a designed screen, not a screenshot from a published store listing.',
+    image: '/projects/android-booking.webp',
+    imageAlt: 'Designed Android booking screen showing today’s appointments. Not a published store screenshot.',
+    width: 1280,
+    height: 800,
+    group: 'mobile',
+  },
+  {
+    slug: 'ios-inbox',
+    name: 'Inbox',
+    kicker: 'iOS app',
+    summary: 'An iPhone app for client messages, with Home, Inbox, and Jobs along the bottom.',
+    problem: 'Client updates, schedule changes, and drafts need one place on the phone instead of a scattered thread.',
+    does:
+      'The screen shows an inbox with a client update, a schedule change, and a draft, plus a button to start a new message. This is a designed iOS interface for the mobile work offered here. No App Store listing is published.',
+    role: 'Designed iOS interface.',
+    stack: ['iOS'],
+    stackNote: 'The picture is a designed screen, not a screenshot from a published store listing.',
+    image: '/projects/ios-inbox.webp',
+    imageAlt: 'Designed iPhone inbox screen with client updates and jobs. Not a published store screenshot.',
+    width: 1280,
+    height: 800,
+    group: 'mobile',
   },
 ]
 

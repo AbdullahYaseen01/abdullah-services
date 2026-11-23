@@ -6,6 +6,7 @@ export function Work() {
   const featured = PROJECTS.filter((project) => project.group === 'featured')
   const previous = PROJECTS.filter((project) => project.group === 'previous')
   const vision = PROJECTS.filter((project) => project.group === 'vision')
+  const mobile = PROJECTS.filter((project) => project.group === 'mobile')
   const [lead, ...rest] = featured
 
   return (
@@ -59,6 +60,18 @@ export function Work() {
         </p>
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
           {vision.map((project) => (
+            <Showcase key={project.slug} project={project} />
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-16">
+        <h3 className="display text-3xl sm:text-4xl">Mobile apps</h3>
+        <p className="mt-2 max-w-2xl text-muted">
+          An Android booking app and an iOS inbox app. The pictures are designed screens, not screenshots from a published store listing.
+        </p>
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          {mobile.map((project) => (
             <Showcase key={project.slug} project={project} />
           ))}
         </div>
