@@ -1,0 +1,16 @@
+{
+  "name": "Abdullah Yaseen",
+  "short_name": "Abdullah Yaseen",
+  "description": "AI and full-stack engineer. SaaS, agents, automation, and product websites.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4efe6",
+  "theme_color": "#f4efe6",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

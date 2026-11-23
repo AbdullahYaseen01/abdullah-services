@@ -1,0 +1,38 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { About } from '../sections/About'
+import { Contact } from '../sections/Contact'
+import { Hero } from '../sections/Hero'
+import { Pricing } from '../sections/Pricing'
+import { Process } from '../sections/Process'
+import { Products } from '../sections/Products'
+import { Services } from '../sections/Services'
+import { Solutions } from '../sections/Solutions'
+import { Testimonials } from '../sections/Testimonials'
+import { Work } from '../sections/Work'
+
+export function HomePage() {
+  const location = useLocation()
+
+  useEffect(() => {
+    document.title = 'Abdullah Yaseen — AI & Full-Stack Engineer'
+    if (!location.hash) return
+    const id = location.hash.replace('#', '')
+    document.getElementById(id)?.scrollIntoView({ block: 'start' })
+  }, [location.hash])
+
+  return (
+    <>
+      <Hero />
+      <Work />
+      <Services />
+      <Solutions />
+      <Products />
+      <About />
+      <Process />
+      <Pricing />
+      <Testimonials />
+      <Contact />
+    </>
+  )
+}
