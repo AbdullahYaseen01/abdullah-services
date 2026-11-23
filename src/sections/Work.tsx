@@ -40,37 +40,75 @@ export function Work() {
         ))}
       </div>
 
-      <div className="mt-14">
-        <h3 className="display text-3xl">Previous websites</h3>
+      <div className="mt-16">
+        <h3 className="display text-3xl sm:text-4xl">Previous websites</h3>
         <p className="mt-2 max-w-2xl text-muted">
           Westora Style is e-commerce. Same Streets Presents is a live-music site. Neither is described with a platform or sales result that was not verified.
         </p>
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
           {previous.map((project) => (
-            <article key={project.slug} className="grid gap-0 overflow-hidden rounded-[1.4rem] border border-line bg-white sm:grid-cols-[0.9fr_1.1fr]">
-              <ProjectImage project={project} />
-              <div className="p-5">
-                <p className="kicker">{project.kicker}</p>
-                <h3 className="display mt-2 text-2xl">{project.name}</h3>
-                <ProjectCopy project={project} compact />
-              </div>
-            </article>
+            <Showcase key={project.slug} project={project} />
           ))}
         </div>
       </div>
 
-      <div className="mt-14 grid gap-4">
-        <h3 className="display text-3xl">Computer vision</h3>
-        {vision.map((project) => (
-          <article key={project.slug} className="rounded-[1.4rem] border border-[#d9f582]/40 bg-night p-6 text-cream sm:p-7">
-            <p className="kicker">{project.kicker}</p>
-            <h3 className="display mt-2 text-3xl">{project.name}</h3>
-            <p className="mt-3 text-sm font-semibold text-lime">No detection image is published on this page.</p>
-            <ProjectCopy project={project} tone="night" />
-          </article>
-        ))}
+      <div className="mt-16">
+        <h3 className="display text-3xl sm:text-4xl">Computer vision</h3>
+        <p className="mt-2 max-w-2xl text-muted">
+          The pictures illustrate the setting. They are not captured detection frames, and no accuracy figure is published.
+        </p>
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          {vision.map((project) => (
+            <Showcase key={project.slug} project={project} />
+          ))}
+        </div>
       </div>
     </section>
+  )
+}
+
+function Showcase({ project }: { project: Project }) {
+  const [failed, setFailed] = useState(false)
+  return (
+    <article className="flex h-full flex-col overflow-hidden rounded-[1.6rem] bg-night text-cream shadow-[0_22px_50px_rgb(8_31_20/14%)]">
+      {project.image && !failed ? (
+        <img
+          src={project.image}
+          alt={project.imageAlt}
+          width={project.width}
+          height={project.height}
+          loading="lazy"
+          className="aspect-[16/10] w-full object-cover"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <div className="grid aspect-[16/10] place-items-center bg-[#103d29] text-sm">Image not available</div>
+      )}
+      <div className="flex flex-1 flex-col p-6">
+        <p className="text-xs font-bold tracking-[0.14em] text-lime uppercase">{project.kicker}</p>
+        <h3 className="display mt-2 text-3xl">{project.name}</h3>
+        <p className="mt-3 leading-relaxed text-[#d7e4d4]">{project.summary}</p>
+        {project.stack.length > 0 && (
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {project.stack.map((item) => (
+              <li key={item} className="rounded-full bg-[#164f35] px-3 py-1 text-xs font-semibold">
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Link className="btn btn-light" to={`/work/${project.slug}`}>
+            Project details
+          </Link>
+          {project.url && (
+            <a className="btn border border-white/30 text-cream" href={project.url}>
+              {project.urlLabel} <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
   )
 }
 
