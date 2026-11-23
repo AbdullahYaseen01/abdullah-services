@@ -105,6 +105,7 @@ export function SiteHeader() {
                 }}
               >
                 {item.label}
+                {item.hash === 'services' ? <span aria-hidden="true"> ▾</span> : null}
               </a>
             )
           })}
@@ -112,7 +113,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <button type="button" className="btn btn-primary talk-desktop shrink-0" onClick={() => goToContact()}>
-            Let's Talk
+            Let's Talk <span aria-hidden="true">↗</span>
           </button>
           <button
             ref={buttonRef}
@@ -155,7 +156,7 @@ export function SiteHeader() {
               </a>
             ))}
             <button type="button" className="btn btn-primary mt-3 w-full" onClick={() => { setOpen(false); goToContact() }}>
-              Let's Talk
+              Let's Talk <span aria-hidden="true">↗</span>
             </button>
           </div>
         </div>
