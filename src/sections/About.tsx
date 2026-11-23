@@ -24,17 +24,17 @@ export function About() {
             </a>
           </p>
         </div>
-        <div>
-          <h3 className="text-sm font-semibold tracking-[0.14em] text-coral uppercase">Technologies in published work</h3>
+        <div className="rounded-[1.6rem] bg-night p-6 text-cream sm:p-8">
+          <h3 className="text-sm font-semibold tracking-[0.14em] text-lime uppercase">Technologies in published work</h3>
           <div className="mt-4 grid gap-4">
             {STACK.map((group) => (
-              <div key={group.label} className="border-t border-line pt-3">
-                <p className="text-sm font-semibold">{group.label}</p>
-                <p className="mt-1 leading-relaxed text-muted">{group.items.join(' · ')}</p>
+              <div key={group.label} className="border-t border-white/15 pt-3">
+                <p className="text-sm font-semibold text-lime">{group.label}</p>
+                <p className="mt-1 leading-relaxed text-[#d7e4d4]">{group.items.join(' · ')}</p>
               </div>
             ))}
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-faint">
+          <p className="mt-4 text-sm leading-relaxed text-[#d7e4d4]">
             OpenAI, Claude, LangChain, n8n, Make.com, Stripe, and React Native are services I offer. They are not listed here as a proven personal stack, because I did not verify them in a public repository for this redesign.
           </p>
         </div>
@@ -44,7 +44,7 @@ export function About() {
         <h3 className="display text-3xl">Experience on record</h3>
         <ol className="mt-5 grid gap-4">
           {EXPERIENCE.map((entry) => (
-            <li key={entry.id} className="grid gap-1 border-t border-line py-4 md:grid-cols-[14rem_1fr] md:gap-8">
+            <li key={entry.id} className="grid gap-1 rounded-[1.3rem] border border-line bg-paper-2 px-5 py-4 md:grid-cols-[14rem_1fr] md:gap-8">
               <p className="text-sm font-semibold text-muted">
                 {entry.startDate} – {entry.endDate ?? 'Present'}
                 <span className="mt-1 block text-ink">{entry.location}</span>

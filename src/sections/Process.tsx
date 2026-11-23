@@ -13,8 +13,8 @@ export function Process() {
         </div>
         <ol className="mt-8 grid gap-4 md:grid-cols-4">
           {PROCESS.map((step) => (
-            <li key={step.step} className="rounded-2xl bg-paper-2 p-5">
-              <p className="display text-3xl text-cobalt">{step.step}</p>
+            <li key={step.step} className="rounded-[1.3rem] border border-line bg-paper-2 p-5">
+              <p className="grid h-12 w-12 place-items-center rounded-full bg-lime text-lg font-extrabold text-ink">{step.step}</p>
               <h3 className="mt-3 text-xl font-semibold">{step.title}</h3>
               <p className="mt-2 text-[0.98rem] leading-relaxed text-muted">{step.body}</p>
             </li>

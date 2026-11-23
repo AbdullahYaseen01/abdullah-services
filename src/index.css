@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f4efe6;
-  --color-paper-2: #fffaf4;
-  --color-sand: #e7dfd2;
-  --color-ink: #1c1422;
-  --color-muted: #534858;
-  --color-faint: #6b5f70;
-  --color-line: #d9cebf;
-  --color-cobalt: #2436c7;
-  --color-cobalt-deep: #18268f;
-  --color-coral: #b33b28;
-  --color-mint: #0f6b5c;
-  --color-night: #16121b;
-  --color-night-2: #221c2a;
-  --color-cream: #f7f1e8;
-  --font-display: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+  --color-paper: #f5f2e8;
+  --color-paper-2: #fffdf7;
+  --color-sand: #e3e9d9;
+  --color-ink: #081f14;
+  --color-muted: #3d5244;
+  --color-faint: #4d6154;
+  --color-line: #d5dccb;
+  --color-cobalt: #103d29;
+  --color-cobalt-deep: #0c2e1e;
+  --color-coral: #c74420;
+  --color-mint: #164f35;
+  --color-night: #081f14;
+  --color-night-2: #103d29;
+  --color-cream: #f5f2e8;
+  --color-lime: #d9f582;
+  --font-display: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
   --font-body: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
 }
 
@@ -30,10 +31,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background:
-    radial-gradient(900px 420px at 100% -10%, rgba(36, 54, 199, 0.08), transparent 60%),
-    radial-gradient(700px 380px at -10% 20%, rgba(179, 59, 40, 0.07), transparent 55%),
-    var(--color-paper);
+  background: var(--color-paper);
 }
 
 body.nav-open {
@@ -41,12 +39,16 @@ body.nav-open {
 }
 
 ::selection {
-  background: #d9e0ff;
+  background: #d9f582;
   color: var(--color-ink);
 }
 
+a {
+  color: inherit;
+}
+
 :focus-visible {
-  outline: 2px solid var(--color-cobalt);
+  outline: 3px solid #d9f582;
   outline-offset: 3px;
 }
 
@@ -100,8 +102,8 @@ section,
 
 .display {
   font-family: var(--font-display);
-  font-optical-sizing: auto;
-  letter-spacing: -0.035em;
+  font-weight: 760;
+  letter-spacing: -0.04em;
 }
 
 .kicker {
@@ -140,13 +142,17 @@ section,
   transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
+.talk-desktop {
+  display: none;
+}
+
 .btn-primary {
-  background: var(--color-cobalt);
+  background: #c74420;
   color: white;
 }
 
 .btn-primary:hover {
-  background: var(--color-cobalt-deep);
+  background: #a53718;
 }
 
 .btn-secondary {
@@ -177,6 +183,12 @@ section,
   border-radius: 0;
   text-decoration: underline;
   text-underline-offset: 0.22em;
+}
+
+@media (min-width: 640px) {
+  .talk-desktop {
+    display: inline-flex;
+  }
 }
 
 @media (min-width: 1120px) {

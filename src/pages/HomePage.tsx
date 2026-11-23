@@ -15,7 +15,7 @@ export function HomePage() {
   const location = useLocation()
 
   useEffect(() => {
-    document.title = 'Abdullah Yaseen — AI & Full-Stack Engineer'
+    document.title = 'Even Better Services — AI / Software'
     if (!location.hash) return
     const id = location.hash.replace('#', '')
     document.getElementById(id)?.scrollIntoView({ block: 'start' })

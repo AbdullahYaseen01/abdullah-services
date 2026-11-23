@@ -52,7 +52,7 @@ function PriceCard({
         {item.numeric ? `From ${item.price}` : item.price}
       </p>
       {note && <p className="mt-3 text-sm leading-relaxed text-muted">{note}</p>}
-      <button type="button" className={`btn mt-auto ${night ? 'btn-light' : 'btn-primary'}`} onClick={() => onSelect(item.inquiry)}>
+      <button type="button" className={`btn mt-6 ${night ? 'btn-light' : 'btn-primary'}`} onClick={() => onSelect(item.inquiry)}>
         {action}
       </button>
     </article>

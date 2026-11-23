@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getProject } from '../data/projects'
-import { PROFILE } from '../data/profile'
 
 export function ProjectPage() {
   const { slug = '' } = useParams()
@@ -10,10 +9,10 @@ export function ProjectPage() {
 
   useEffect(() => {
     if (!project) {
-      document.title = 'Project not found — Abdullah Yaseen'
+      document.title = 'Project not found — Even Better Services'
       return
     }
-    document.title = `${project.name} — ${PROFILE.name}`
+    document.title = `${project.name} — Even Better Services`
     window.scrollTo(0, 0)
   }, [project])
 
@@ -38,14 +37,16 @@ export function ProjectPage() {
       <p className="mt-4 max-w-2xl text-xl leading-relaxed text-muted">{project.summary}</p>
 
       {project.image && !failed && (
-        <img
-          src={project.image}
-          alt={project.imageAlt}
-          width={project.width}
-          height={project.height}
-          className="mt-8 w-full rounded-[1.4rem] border border-line object-cover object-top"
-          onError={() => setFailed(true)}
-        />
+        <div className="mt-8 rounded-[1.4rem] bg-night p-1.5">
+          <img
+            src={project.image}
+            alt={project.imageAlt}
+            width={project.width}
+            height={project.height}
+            className="w-full rounded-xl object-cover object-top"
+            onError={() => setFailed(true)}
+          />
+        </div>
       )}
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">

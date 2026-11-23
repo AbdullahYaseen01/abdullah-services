@@ -111,8 +111,8 @@ export function InquiryForm() {
     <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
       <div>
         <p className="kicker">Contact</p>
-        <h2 className="display mt-3 text-4xl leading-tight text-cream sm:text-5xl">Tell me what you want to build.</h2>
-        <p className="mt-4 text-lg leading-relaxed text-[#ddd4ea]">
+        <h2 className="display mt-3 text-4xl leading-tight text-cream sm:text-5xl">Let's build something that works.</h2>
+        <p className="mt-4 text-lg leading-relaxed text-[#d7e4d4]">
           I work with international clients. Email and WhatsApp are the direct routes. The form sends only when mail delivery is configured.
         </p>
         <ul className="mt-6 grid gap-3 text-[1.02rem]">

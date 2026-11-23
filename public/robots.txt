@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abdullahyaseen.dev/sitemap.xml
+Sitemap: https://evenbetterservices.vercel.app/sitemap.xml

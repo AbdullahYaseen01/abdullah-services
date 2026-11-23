@@ -1,14 +1,14 @@
 {
-  "name": "Abdullah Yaseen",
-  "short_name": "Abdullah Yaseen",
-  "description": "AI and full-stack engineer. SaaS, agents, automation, and product websites.",
+  "name": "Even Better Services",
+  "short_name": "Even Better",
+  "description": "Independent software for AI, automation, and products.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f4efe6",
-  "theme_color": "#f4efe6",
+  "background_color": "#081f14",
+  "theme_color": "#081f14",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/assets/forest/logo-mark.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }

@@ -5,8 +5,8 @@ export function Testimonials() {
   const { goToContact } = useInquiry()
 
   return (
-    <section id="testimonials" className="border-y border-line bg-sand/40 py-14 md:py-16">
-      <div className="wrap max-w-3xl">
+    <section id="testimonials" className="bg-paper py-14 md:py-20">
+      <div className="wrap max-w-3xl rounded-[1.6rem] border border-[#164f35]/25 bg-sand px-6 py-8 sm:px-8">
         <p className="kicker">Testimonials</p>
         <h2 className="display mt-3 text-4xl">Client words, only when they are real.</h2>
         {TESTIMONIALS.length === 0 ? (

@@ -1,9 +1,10 @@
 import { useEffect, useId, useRef, useState } from 'react'
-import { NAV, PROFILE } from '../data/profile'
+import { NAV } from '../data/profile'
 import { useInquiry, useSectionScroll } from '../context/useInquiry'
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const [active, setActive] = useState('top')
   const panelRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const titleId = useId()
@@ -11,13 +12,27 @@ export function SiteHeader() {
   const { goToContact } = useInquiry()
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+        if (visible?.target.id) setActive(visible.target.id)
+      },
+      { rootMargin: '-45% 0px -45% 0px', threshold: [0.15, 0.4] },
+    )
+    NAV.forEach((item) => {
+      const element = document.getElementById(item.hash)
+      if (element) observer.observe(element)
+    })
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
     document.body.classList.toggle('nav-open', open)
     if (!open) return
-
-    const panel = panelRef.current
-    const focusable = panel?.querySelectorAll<HTMLElement>('a, button')
+    const focusable = panelRef.current?.querySelectorAll<HTMLElement>('a, button')
     focusable?.[0]?.focus()
-
     const onKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setOpen(false)
@@ -35,7 +50,6 @@ export function SiteHeader() {
         first.focus()
       }
     }
-
     document.addEventListener('keydown', onKey)
     return () => {
       document.removeEventListener('keydown', onKey)
@@ -43,55 +57,67 @@ export function SiteHeader() {
     }
   }, [open])
 
+  const pendingHash = useRef<string | null>(null)
+
+  useEffect(() => {
+    if (open || !pendingHash.current) return
+    const hash = pendingHash.current
+    pendingHash.current = null
+    goTo(hash)
+  }, [open, goTo])
+
   const visit = (hash: string) => {
-    setOpen(false)
+    if (open) {
+      pendingHash.current = hash
+      setOpen(false)
+      return
+    }
     goTo(hash)
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper">
-      <div className="wrap flex h-[4.25rem] items-center justify-between gap-4">
+    <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 md:px-6 md:pt-4">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 rounded-full border border-white/70 bg-[#f5f2e8]/90 px-3 shadow-[0_16px_40px_rgb(8_31_20/16%)] backdrop-blur-md">
         <a
           href="/#top"
-          aria-label={PROFILE.name}
-          className="flex min-h-11 items-center gap-2.5 no-underline"
+          className="flex min-h-11 items-center gap-2 pl-1 no-underline"
           onClick={(event) => {
             event.preventDefault()
             visit('top')
           }}
         >
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cobalt text-sm font-bold text-white" aria-hidden="true">
-            AY
-          </span>
-          <span className="hidden text-[0.98rem] font-semibold tracking-tight sm:inline" aria-hidden="true">
-            {PROFILE.name}
-          </span>
+          <img src="/assets/forest/logo-mark.svg" alt="" width={36} height={28} />
+          <span className="whitespace-nowrap text-sm font-extrabold tracking-wide text-ink">AI / SOFTWARE</span>
         </a>
 
-        <nav className="nav-desktop items-center gap-4 xl:gap-5" aria-label="Primary">
-          {NAV.map((item) => (
-            <a
-              key={item.hash}
-              href={`/#${item.hash}`}
-              className="text-[0.92rem] font-medium text-muted no-underline hover:text-ink"
-              onClick={(event) => {
-                event.preventDefault()
-                visit(item.hash)
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
+        <nav className="nav-desktop items-center gap-1" aria-label="Primary">
+          {NAV.map((item) => {
+            const current = active === item.hash
+            return (
+              <a
+                key={item.hash}
+                href={`/#${item.hash}`}
+                aria-current={current ? 'true' : undefined}
+                className={`rounded-full px-2.5 py-1.5 text-sm font-semibold no-underline ${current ? 'bg-[#d7eccf] text-ink underline decoration-[#164f35] decoration-2 underline-offset-4' : 'text-[#234233]'}`}
+                onClick={(event) => {
+                  event.preventDefault()
+                  visit(item.hash)
+                }}
+              >
+                {item.label}
+              </a>
+            )
+          })}
         </nav>
 
         <div className="flex items-center gap-2">
-          <button type="button" className="btn btn-primary shrink-0 whitespace-nowrap px-3.5 sm:px-5" onClick={() => goToContact()}>
-            Hire Me
+          <button type="button" className="btn btn-primary talk-desktop shrink-0" onClick={() => goToContact()}>
+            Let's Talk
           </button>
           <button
             ref={buttonRef}
             type="button"
-            className="btn btn-secondary mobile-toggle"
+            className="btn btn-secondary mobile-toggle px-3"
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -102,43 +128,34 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="mobile-toggle fixed inset-0 top-[4.25rem] z-30 bg-ink/40" onClick={() => setOpen(false)}>
+        <div className="mobile-toggle fixed inset-0 top-0 z-30 bg-[#06160e]/45" onClick={() => setOpen(false)}>
           <div
             id="mobile-nav"
             ref={panelRef}
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            className="max-h-[calc(100dvh-4.25rem)] overflow-auto border-t border-line bg-paper-2 px-4 py-5 shadow-lg"
+            className="mx-3 mt-20 max-h-[calc(100dvh-6rem)] overflow-auto rounded-3xl bg-[#f5f2e8] p-4 shadow-xl"
             onClick={(event) => event.stopPropagation()}
           >
-            <p id={titleId} className="mb-3 text-sm font-semibold text-muted">
+            <p id={titleId} className="px-2 pb-2 text-sm font-semibold text-muted">
               Navigate
             </p>
-            <div className="grid gap-1">
-              {NAV.map((item) => (
-                <a
-                  key={item.hash}
-                  href={`/#${item.hash}`}
-                  className="rounded-xl px-3 py-3 text-lg font-medium no-underline hover:bg-sand"
-                  onClick={(event) => {
-                    event.preventDefault()
-                    visit(item.hash)
-                  }}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-            <button
-              type="button"
-              className="btn btn-primary mt-4 w-full"
-              onClick={() => {
-                setOpen(false)
-                goToContact()
-              }}
-            >
-              Hire Me
+            {NAV.map((item) => (
+              <a
+                key={item.hash}
+                href={`/#${item.hash}`}
+                className="block rounded-xl px-3 py-3 text-lg font-semibold no-underline"
+                onClick={(event) => {
+                  event.preventDefault()
+                  visit(item.hash)
+                }}
+              >
+                {item.label}
+              </a>
+            ))}
+            <button type="button" className="btn btn-primary mt-3 w-full" onClick={() => { setOpen(false); goToContact() }}>
+              Let's Talk
             </button>
           </div>
         </div>

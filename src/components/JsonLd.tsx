@@ -20,10 +20,10 @@ export function JsonLd() {
       },
       {
         '@type': 'WebSite',
-        name: `${PROFILE.name} — Portfolio`,
+        name: 'Even Better Services',
         url: SITE_URL,
         description:
-          'Portfolio of Abdullah Yaseen, an AI and full-stack engineer who builds AI applications, agents, automation, and SaaS products.',
+          'From AI conversations to connected products, turn your next idea into software that works.',
       },
     ],
   }

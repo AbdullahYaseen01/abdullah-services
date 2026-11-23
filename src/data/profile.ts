@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://abdullahyaseen.dev'
+export const SITE_URL = 'https://evenbetterservices.vercel.app'
 
 export const PROFILE = {
   name: 'Abdullah Yaseen',
