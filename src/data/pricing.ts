@@ -52,22 +52,3 @@ export const PROCESS = [
     body: 'We test, launch, and hand the project over with the access and context needed to run it.',
   },
 ]
-
-export const STACK = [
-  {
-    label: 'Frontend',
-    items: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS'],
-  },
-  {
-    label: 'Backend',
-    items: ['Node.js', 'Python', 'REST APIs'],
-  },
-  {
-    label: 'Computer vision',
-    items: ['Python', 'YOLO', 'OpenCV', 'YOLOv8', 'DeepSORT'],
-  },
-  {
-    label: 'Tools',
-    items: ['Git', 'Vercel'],
-  },
-]

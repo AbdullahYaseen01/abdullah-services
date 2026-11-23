@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { About } from '../sections/About'
 import { Contact } from '../sections/Contact'
 import { Hero } from '../sections/Hero'
 import { Pricing } from '../sections/Pricing'
@@ -28,7 +27,6 @@ export function HomePage() {
       <Services />
       <Solutions />
       <Products />
-      <About />
       <Process />
       <Pricing />
       <Testimonials />

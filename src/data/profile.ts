@@ -2,7 +2,6 @@ export const SITE_URL = 'https://evenbetterservices.vercel.app'
 
 export const NAV = [
   { label: 'Home', hash: 'top' },
-  { label: 'About', hash: 'about' },
   { label: 'Services', hash: 'services' },
   { label: 'Projects', hash: 'work' },
   { label: 'SaaS Products', hash: 'products' },
