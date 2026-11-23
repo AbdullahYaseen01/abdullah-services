@@ -1,4 +1,3 @@
-import { EXPERIENCE } from '../data/experience'
 import { STACK } from '../data/pricing'
 
 export function About() {
@@ -32,27 +31,6 @@ export function About() {
           </p>
         </div>
       </div>
-
-      <div className="mt-14">
-        <h3 className="display text-3xl">Experience on record</h3>
-        <ol className="mt-5 grid gap-4">
-          {EXPERIENCE.map((entry) => (
-            <li key={entry.id} className="grid gap-1 rounded-[1.3rem] border border-line bg-paper-2 px-5 py-4 md:grid-cols-[14rem_1fr] md:gap-8">
-              <p className="text-sm font-semibold text-muted">
-                {entry.startDate} – {entry.endDate ?? 'Present'}
-              </p>
-              <div>
-                <p className="font-semibold">
-                  {entry.role}, {entry.company}
-                  <span className="font-medium text-muted"> · {entry.employmentType}</span>
-                </p>
-                {entry.description && <p className="mt-1 leading-relaxed text-muted">{entry.description}</p>}
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
-
     </section>
   )
 }

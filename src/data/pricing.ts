@@ -68,6 +68,6 @@ export const STACK = [
   },
   {
     label: 'Tools',
-    items: ['Git', 'GitHub', 'Vercel'],
+    items: ['Git', 'Vercel'],
   },
 ]

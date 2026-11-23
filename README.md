@@ -43,7 +43,6 @@ A successful message is shown only after Resend accepts the email.
 | `src/data/solutions.ts` | Business solutions |
 | `src/data/pricing.ts` | Prices, process, and technology groups |
 | `src/data/testimonials.ts` | Sample testimonials for layout only |
-| `src/data/experience.ts` | Experience already on record |
 
 ## Deploy
 
