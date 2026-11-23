@@ -87,7 +87,7 @@ export function SiteHeader() {
           }}
         >
           <img src="/assets/forest/logo-mark.svg" alt="" width={36} height={28} />
-          <span className="whitespace-nowrap text-sm font-extrabold tracking-wide text-ink">AI / SOFTWARE</span>
+          <span className="whitespace-nowrap text-sm font-extrabold tracking-wide text-ink">evenbetterservice</span>
         </a>
 
         <nav className="nav-desktop items-center gap-1" aria-label="Primary">

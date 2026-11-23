@@ -67,18 +67,18 @@ export function Hero() {
             className="h-full w-full object-cover object-[center_58%]"
           />
         </picture>
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgb(6_22_14/58%),rgb(6_22_14/28%)_34%,rgb(6_22_14/12%)_58%,rgb(6_22_14/72%))]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgb(6_22_14/46%),rgb(6_22_14/18%)_32%,rgb(6_22_14/8%)_55%,rgb(6_22_14/62%))]" />
 
-        <div className="relative mx-auto max-w-4xl px-4 pb-6 pt-28 text-center md:pt-32">
-          <p className="text-xs font-bold tracking-[0.18em] text-[#d9f582] sm:text-[0.8rem]">AI SOLUTIONS • CUSTOM SOFTWARE • AUTOMATION</p>
-          <h1 className="mt-4 text-[clamp(2.6rem,6.4vw,5.15rem)] leading-[0.98] font-extrabold tracking-[-0.045em]">
+        <div className="relative mx-auto max-w-4xl px-4 pb-3 pt-24 text-center">
+          <p className="text-[0.68rem] font-bold tracking-[0.16em] text-[#d9f582] sm:text-xs">AI SOLUTIONS • CUSTOM SOFTWARE • AUTOMATION</p>
+          <h1 className="mt-2 text-[clamp(2rem,4.2vw,3.45rem)] leading-[1.02] font-extrabold tracking-[-0.04em]">
             Smarter software.
             <span className="mt-1 block text-[#d9f582]">Real business possibilities.</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-[#f5f2e8]">
+          <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-[#f5f2e8] sm:text-lg">
             From AI conversations to connected products, turn your next idea into software that works.
           </p>
-          <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+          <div className="mt-4 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
             <button type="button" className="btn btn-primary" onClick={() => goToContact()}>
               Let's Work Together <span aria-hidden="true">↗</span>
             </button>
@@ -88,10 +88,10 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto grid w-[min(1080px,calc(100%-2rem))] items-end gap-4 pb-8 lg:grid-cols-[minmax(0,1fr)_190px] lg:gap-6">
+        <div className="relative mx-auto grid w-[min(860px,calc(100%-2rem))] items-end gap-3 pb-6 lg:grid-cols-[minmax(0,1fr)_150px] lg:gap-4">
           <div>
             <div className="rounded-[1.35rem] border-[6px] border-[#d7d3c2] bg-[#1c241c] p-2 shadow-[0_28px_60px_rgb(0_0_0/35%)] md:p-2.5">
-              <div className="overflow-hidden rounded-[0.9rem] bg-[#f6f3ea] text-[#081f14] md:grid md:min-h-[390px] md:grid-cols-[150px_minmax(0,1fr)]">
+              <div className="overflow-hidden rounded-[0.9rem] bg-[#f6f3ea] text-[#081f14] md:grid md:min-h-[280px] md:grid-cols-[132px_minmax(0,1fr)]">
                 <aside className="hidden bg-[#103d29] p-3 text-[12px] text-[#eaf0de] md:block" aria-hidden="true">
                   <img src="/assets/forest/logo-mark.svg" alt="" width={36} height={28} className="mb-4" />
                   {SIDEBAR.map((item, index) => (
@@ -103,7 +103,7 @@ export function Hero() {
                 </aside>
                 <div className="p-3 sm:p-4">
                   <span className="inline-block rounded-full bg-[#e2e6cc] px-2.5 py-1 text-[11px] font-bold text-[#23432b]">Solution preview</span>
-                  <h2 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-[1.7rem]">Your connected business</h2>
+                  <h2 className="mt-2 text-xl font-extrabold tracking-tight sm:text-2xl">Your connected business</h2>
                   <div className="mt-3 grid gap-3 md:grid-cols-2">
                     <div className="rounded-2xl border border-[#e1dfd2] bg-white p-3">
                       <p className="flex items-center gap-2 font-bold">
@@ -150,7 +150,7 @@ export function Hero() {
 
           <button
             type="button"
-            className="mx-auto hidden w-[176px] rounded-[1.8rem] border-[3px] border-[#c5c6ad] bg-[#132019] p-2 text-left text-[#081f14] shadow-xl lg:mb-8 lg:block"
+            className="mx-auto hidden w-[142px] rounded-[1.6rem] border-[3px] border-[#c5c6ad] bg-[#132019] p-1.5 text-left text-[#081f14] shadow-xl lg:mb-6 lg:block"
             onClick={() => goToContact()}
             aria-label="Book a Call preview. Opens the contact form. No appointment is booked."
           >

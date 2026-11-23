@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div>
           <p className="flex items-center gap-2 text-lg font-extrabold">
             <img src="/assets/forest/logo-mark.svg" alt="" width={36} height={28} />
-            AI / SOFTWARE
+            evenbetterservice
           </p>
           <p className="mt-2 max-w-sm text-sm leading-relaxed text-[#d7e4d4]">Independent software for AI, automation, and products.</p>
         </div>
