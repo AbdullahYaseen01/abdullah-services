@@ -4,7 +4,6 @@ import { Contact } from '../sections/Contact'
 import { Hero } from '../sections/Hero'
 import { Pricing } from '../sections/Pricing'
 import { Process } from '../sections/Process'
-import { Products } from '../sections/Products'
 import { Services } from '../sections/Services'
 import { Solutions } from '../sections/Solutions'
 import { Testimonials } from '../sections/Testimonials'
@@ -26,7 +25,6 @@ export function HomePage() {
       <Work />
       <Services />
       <Solutions />
-      <Products />
       <Process />
       <Pricing />
       <Testimonials />
